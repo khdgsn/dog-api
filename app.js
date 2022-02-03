@@ -1,15 +1,22 @@
 const dogCard = document.getElementById('dogCard');
 
 const fetchDog = async () => {
-    const url = `https://dog.ceo/api/breeds/list/all`;
-    const res = await fetch(url);
-    const data = await res.json();
-    const dog = data.results.map((data, index) => ({
-        name: data.name,
-        id: index + 1,
-        image: `https://dog.ceo/api/breeds/image/random`
-    }));
+    console.log('fetch get async')
 
+    try{
+        const url = `https://dog.ceo/api/breeds/list/all`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const dog = data.results.map((data, index) => ({
+            name: data.name,
+            id: index + 1,
+            image: `https://dog.ceo/api/breeds/image/random`
+        }));
+    }
+    catch(err){
+        console.log(err);
+    }
+    
     displayDog(dog);
 };
 
