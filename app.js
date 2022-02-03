@@ -19,10 +19,9 @@ const fetchDog = async () => {
 const displayDog = (dog) => {
     const dogHTMLString = dog
         .map(
-            (dog) =>
+            () =>
                 `
-                <p class="card" ${dog.id}">
-                </p>
+                <h2> hello world </h2>
                 `
         )
         .join('');
