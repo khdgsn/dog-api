@@ -12,10 +12,8 @@ const fetchDog = async () => {
         1}.png`
     }));
     
-    //displayDog(dog); 
+    displayDog(dog); 
 };
-
-/*
 
 const displayDog = (dog) => {
     const dogHTMLString = dog
@@ -29,6 +27,6 @@ const displayDog = (dog) => {
         )
         .join('');
     dogCard.innerHTML = dogHTMLString;
-}; */
+};
 
 fetchDog();
