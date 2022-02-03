@@ -1,7 +1,7 @@
 const dogCard = document.getElementById('dogCard');
 
 const fetchDog = async () => {
-    const url = ``;
+    const url = `https://dog.ceo/api/breeds/list/all`;
     const res = await fetch(url);
     const data = await res.json();
     const dog = data.results.map((data, index) => ({
@@ -18,7 +18,7 @@ const displayDog = (dog) => {
         .map(
             (dog) =>
                 `
-    <li class="card" onclick="selectPokemon(${dog.id})">
+    <li class="card" ${dog.id}">
         <img class="card-image" src="${dog.image}"/>
     </li>
         `
