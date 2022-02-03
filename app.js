@@ -26,3 +26,5 @@ const displayDog = (dog) => {
         .join('');
     dogCard.innerHTML = dogHTMLString;
 };
+
+fetchDog();
