@@ -1,31 +1,34 @@
-const dogCard = document.getElementById('dogCard');
+const pokedex = document.getElementById('pokedex');
+const cachedPokemon = {};
 
-const fetchDog = async () => {
+const fetchPokemon = async () => {
     const url = `https://dog.ceo/api/breeds/list/all`;
     const res = await fetch(url);
     const data = await res.json();
-        
-    const dog = data.results.map((data, index) => ({
+    const pokemon = data.results.map((data, index) => ({
         name: data.name,
         id: index + 1,
-        // image: `https://dog.ceo/api/breeds/image/random/${index +
-        // 1}.png`
-        // <img class="card-image" src="${dog.image}"/> for html string
+        image: `https://dog.ceo/api/breeds/image/random/${index +
+            1}.png`
     }));
-    
-    displayDog(dog); 
+
+    displayPokemon(pokemon);
 };
 
-const displayDog = (dog) => {
-    const dogHTMLString = dog
+const displayPokemon = (pokemon) => {
+    const pokemonHTMLString = pokemon
         .map(
-            () =>
+            (pokeman) =>
                 `
-                <h2> hello world </h2>
-                `
+    <li class="card" onclick="selectPokemon(${pokeman.id})">
+        <img class="card-image" src="${pokeman.image}"/>
+        <h2 class="card-title">${pokeman.id}. ${pokeman.name}</h2>
+        </a>
+    </li>
+        `
         )
         .join('');
-    dogCard.innerHTML = dogHTMLString;
+    pokedex.innerHTML = pokemonHTMLString;
 };
 
-fetchDog();
+fetchPokemon();
