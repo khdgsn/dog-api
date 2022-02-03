@@ -9,12 +9,9 @@ const fetchDog = async () => {
         const data = await res.json();
         
         const dog = data.results.map((data, index) => ({
-            name: data.name,
             id: index + 1,
-            image: `https://dog.ceo/api/breeds/image/random`  
-        }
-        )
-        );
+            image: `https://dog.ceo/api/breeds/image/random/${index + 1}`  
+        }));
         console.log('here');
         displayDog(dog); 
     }
@@ -28,11 +25,7 @@ const displayDog = (dog) => {
     const dogHTMLString = dog
         .map(
             (dog) =>
-                `
-    <li class="card" ${dog.id}">
-        <img class="card-image" src="${dog.image}"/>
-    </li>
-        `
+                `<img class="card-image" src="${dog.image}"/>`
         )
         .join('');
     dogCard.innerHTML = dogHTMLString;
