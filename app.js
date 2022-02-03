@@ -1,7 +1,7 @@
 const dogCard = document.getElementById('dogCard');
 
 const fetchDog = async () => {
-    const url = `https://dog.ceo/api/breeds/image/random`;
+    const url = `https://dog.ceo/api/breeds/list/all`;
     const res = await fetch(url);
     const data = await res.json();
         
