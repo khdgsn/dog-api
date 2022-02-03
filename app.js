@@ -7,14 +7,15 @@ const fetchDog = async () => {
         const url = `https://dog.ceo/api/breeds/list/all`;
         const res = await fetch(url);
         const data = await res.json();
-        console.log('here');
+        
         const dog = data.results.map((data, index) => ({
             name: data.name,
             id: index + 1,
-            image: `https://dog.ceo/api/breeds/image/random`
-
-          
-        }));
+            image: `https://dog.ceo/api/breeds/image/random`  
+        }
+        )
+        );
+        console.log('here');
         displayDog(dog); 
     }
     catch(err){
