@@ -1,7 +1,7 @@
 body {
-    background-color: orangered;
+    background-color: #e8fff1;
     margin: 0;
-    font-family: rubik;
+    font-family: Spectral;
     color: white;
 }
 
@@ -41,7 +41,7 @@ h1 {
     height: 180px;
   }
 
-  #pokedex {
+  #dogCard {
       padding-inline-start: 0;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
