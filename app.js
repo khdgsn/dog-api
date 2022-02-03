@@ -11,13 +11,15 @@ const fetchDog = async () => {
             name: data.name,
             id: index + 1,
             image: `https://dog.ceo/api/breeds/image/random`
+
+          
         }));
+        displayDog(dog); 
     }
     catch(err){
         console.log(err);
     }
     
-    displayDog(dog);
 };
 
 const displayDog = (dog) => {
