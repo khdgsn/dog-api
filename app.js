@@ -12,7 +12,7 @@ const fetchDog = async () => {
         1}.png`
     }));
     
-    displayDog(dog); 
+    //displayDog(dog); 
 };
 
 /*
