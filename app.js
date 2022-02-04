@@ -21,7 +21,8 @@ const displayDog = (dog) => {
             `
             <li class="card">
                 <img class="card-image" src="${doggo.image}"/>
-                <h2 class="card-title">${doggo.id}. ${doggo.name}</h2>
+                <h2 class="card-title">Your random dog</h2>
+                <p class="card-content">${doggo.id}. ${doggo.name}</p>
                 </a>
             </li>
             `
