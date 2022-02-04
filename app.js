@@ -8,7 +8,6 @@ const fetchDog = async () => {
     const dog = data.results.map((data) => ({
         name: data.name,
         id: data.id,
-        image: `https://dog.ceo/api/breeds/image/random/${data.id}`
     }));
     
     displayDog(dog); 
