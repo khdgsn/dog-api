@@ -5,11 +5,10 @@ const fetchDog = async () => {
     const res = await fetch(url);
     const data = await res.json();
         
-    const dog = data.results.map((data, index) => ({
+    const dog = data.results.map((data) => ({
         name: data.name,
-        id: index + 1,
-        image: `https://dog.ceo/api/breeds/image/random/${index +
-        1}.png`
+        id: data.id,
+        image: `https://dog.ceo/api/breeds/image/random/${data.id}`
     }));
     
     displayDog(dog); 
@@ -21,7 +20,7 @@ const displayDog = (dog) => {
         .map(
             (doggo) =>
             `
-            <li class="card" onclick="selectPokemon(${doggo.id})">
+            <li class="card">
                 <img class="card-image" src="${doggo.image}"/>
                 <h2 class="card-title">${doggo.id}. ${doggo.name}</h2>
                 </a>
