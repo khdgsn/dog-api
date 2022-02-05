@@ -1,4 +1,4 @@
-const G = require("glob");
+// const G = require("glob");
 
 // create variable to grab element to change
 const dogCard = document.getElementById('dogCard');
@@ -22,7 +22,10 @@ const fetchDog = async () => {
     var result = url.slice(-1)
     console.log(result)
 }
-
+/*
+how to check last element in string 
+if it doesnt not equal G, remove it
+*/
 const displayDog = (dog) => {
     const dogHTMLString = `<img class="card-image" src=${dog} />`
     dogCard.innerHTML = dogHTMLString;
@@ -30,7 +33,4 @@ const displayDog = (dog) => {
 
 fetchDog();
 
-/*
-how to check last element in string 
-if it doesnt not equal G, remove it
-*/
+
