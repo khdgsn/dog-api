@@ -27,6 +27,7 @@ const displayDog = (dog) => {
             </li>
             `
         )
+        // joins populated array together as a string
         .join('');
     dogCard.innerHTML = dogHTMLString;
 };
