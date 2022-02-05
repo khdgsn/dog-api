@@ -6,8 +6,8 @@ const fetchDog = async () => {
     const data = await res.json();
     const dog = data.results.map((data, index) => ({
         name: data.name,
-        id: index + 1,
-        image: `https://dog.ceo/api/breeds/image/${index + 1}`
+        //id: index + 1,
+        image: `https://dog.ceo/api/breed/${index + 1}/images/random`
     }));
 
     displayDog(dog);
