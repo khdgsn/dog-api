@@ -1,13 +1,12 @@
 const dogCard = document.getElementById('dogCard');
 
 const fetchDog = async () => {
-    const url = `https://dog.ceo/api/breeds/list/all`;
+    const url = `https://dog.ceo/api/breeds/image/random`;
     const res = await fetch(url);
     const data = await res.json();
         
     const dog = data.results.map((data) => ({
-        name: data.name,
-        id: data.id,
+        image: `https://dog.ceo/api/breeds/image/random/${data}`
     }));
     
     displayDog(dog); 
@@ -19,12 +18,10 @@ const displayDog = (dog) => {
         .map(
             (doggo) =>
             `
-            <li class="card">
+            <div class="card">
                 <img class="card-image" src="${doggo.image}"/>
-                <h2 class="card-title">Your random dog</h2>
-                <p class="card-content">${doggo.id}. ${doggo.name}</p>
                 </a>
-            </li>
+            </div>
             `
         )
         // joins populated array together as a string
