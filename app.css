@@ -4,7 +4,7 @@ body {
     font-family: Spectral;
 }
 
-.container {
+.header {
     padding: 40px;
     margin: 0 auto;
 }
@@ -61,6 +61,6 @@ h1 {
     }
   }
 
-  #dogButton {
-      position: relative;
+  .container {
+      text-align: center;
   }
