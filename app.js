@@ -4,9 +4,10 @@ const fetchDog = async () => {
     const url = 'https://dog.ceo/api/breeds/list/all';
     const res = await fetch(url);
     const data = await res.json();
-    const dog = data.results.map((data) => ({
+    const dog = data.results.map((data, index) => ({
         name: data.name,
-        image: 'https://dog.ceo/api/breeds/image/random'
+        id: index + 1,
+        image: `https://dog.ceo/api/breeds/image/${index + 1}`
     }));
 
     displayDog(dog);
