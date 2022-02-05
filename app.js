@@ -1,5 +1,8 @@
+// create variable to grab element to change
 const dogCard = document.getElementById('dogCard');
 
+// create variable to grab data from an API
+// use async & await to make javascript wait until program is ready
 const fetchDog = async () => {
     const url = `https://dog.ceo/api/breeds/image/random`;
     const res = await fetch(url);
@@ -29,4 +32,5 @@ const displayDog = (dog) => {
     dogCard.innerHTML = dogHTMLString;
 };
 
+// display final output of function
 fetchDog();
