@@ -4,16 +4,13 @@ const dogCard = document.getElementById('dogCard');
 // create variable to grab data from an API
 // use async & await to make javascript wait until program is ready
 const fetchDog = async () => {
-    const url = 'https://dog.ceo/api/breeds/list/all';
+    const url = 'https://dog.ceo/api/breeds/image/random';
     const res = await fetch(url);
     const data = await res.json();
-    /*
-    const dog = data.results.map((data, index) => ({
-        name: data.name,
-        //id: index + 1,
-        image: `https://dog.ceo/api/breed/${index + 1}/images/random` 
+    
+    const dog = data.results.map((data) => ({
+        image: data.image
     }));
-    */
     displayDog(dog);
 }
 
