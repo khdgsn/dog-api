@@ -19,7 +19,7 @@ const fetchDog = async () => {
     console.log(dog)
     displayDog(dog);
 
-    var result = url.slice(-1)
+    let result = url.slice(-1)
     console.log(result)
 }
 /*
