@@ -5,11 +5,11 @@ const dogCard = document.getElementById('dogCard');
 const fetchDog = async () => {
     // assigning varible
     const url = 'https://dog.ceo/api/breeds/image/random/';
-    // g = globally replace -DO NOT WANT REPLACES ALL /
+    // g = globally replace - DO NOT WANT REPLACES ALL /
     // / = what is being replaced however \ = is an escape to make it viable otherwise // is a comment
     let newUrl = url.replace(/\/$/, '');
     console.log(newUrl)
-    
+
     // making js wait until all data us fetched using above variable
     const res = await fetch(newUrl);
     

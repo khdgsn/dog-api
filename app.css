@@ -24,7 +24,9 @@ h1 {
   }
 
   #dogCard {
-      display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .buttonContainer {
